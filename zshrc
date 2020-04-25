@@ -1,5 +1,12 @@
+# Environment Variables
 export ZSH="/Users/raveneyex/.oh-my-zsh"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/"
 export UPDATE_ZSH_DAYS=15
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="true"
@@ -110,13 +117,30 @@ POWERLEVEL9K_BATTERY_VERBOSE=true
 POWERLEVEL9K_TIME_BACKGROUND="$RIGHT_BACKGROUND"
 POWERLEVEL9K_TIME_FOREGROUND="$RIGHT_FOREGROUND"
 
+# NVM
+POWERLEVEL9K_NVM_BACKGROUND="$RIGHT_BACKGROUND"
+POWERLEVEL9K_NVM_FOREGROUND="$RIGHT_FOREGROUND"
+POWERLEVEL9K_NODE_ICON=$'\ue718 '
+
+
 # Prompt elements
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user dir vcs)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_spotify_info background_jobs battery time) 
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs battery time nvm) 
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(custom_spotify_info background_jobs battery time nvm) 
 
 plugins=(
   git
+  mvn
 )
 
 source $ZSH/oh-my-zsh.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Aliases and functions
+source $HOME/.commands
+
+nvm use default
