@@ -7,17 +7,20 @@ Plug 'ryanoasis/vim-devicons',
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'Quramy/tsuquyomi/'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdcommenter'
+Plug 'whatyouhide/vim-gotham'
 
 call plug#end()
 
 " Encoding
 set encoding=UTF-8
 
+" Color theme
+syntax enable
 set background=dark
+colorscheme gotham
 
 " Tab settings
 set expandtab
@@ -57,8 +60,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_enable_highlighting=1
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['java'] }
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_jshint_args = '--config ~/.jshintrc'
-let g:syntastic_typescript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+" let g:syntastic_typescript_checkers = ['eslint']
+" let g:syntastic_typescript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_java_checkers = []
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_haskell_checkers = []
