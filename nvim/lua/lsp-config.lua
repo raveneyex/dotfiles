@@ -52,3 +52,20 @@ nvim_lsp.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
 }
+
+--LSP Saga UI
+local sagaStatus, saga = pcall(require, "lspsaga")
+if (not sagaStatus) then return end
+
+saga.setup {
+  sever_filetype_map = {
+    typescript = 'typescript'
+  }
+}
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
+vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)

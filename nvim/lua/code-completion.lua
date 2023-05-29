@@ -23,13 +23,12 @@ end
 
 vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert', 'preview' }
 -- shortmess is used to avoid excessive messages
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 
 cmp.setup({
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
-      vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -44,11 +43,11 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'path' },
-    { name = 'nvim_lsp', keyword_length = 3 },
-    { name = 'nvim_lsp_signature_help'}, 
-    { name = 'nvim_lua', keyword_length = 2},
-    { name = 'buffer', keyword_length = 2 },
-    { name = 'vsnip', keyword_length = 2 },
+    { name = 'nvim_lsp',               keyword_length = 3 },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'nvim_lua',               keyword_length = 2 },
+    { name = 'buffer',                 keyword_length = 2 },
+    { name = 'vsnip',                  keyword_length = 2 },
   }),
   formatting = {
     format = lspkind.cmp_format({
@@ -100,7 +99,7 @@ vim.o.updatetime = 250
 vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 require("nvim-autopairs").setup({
-  disable_filetype = { "TelescopePrompt", "vim" }
+  disable_filetype = { "TelescropePrompt", "vim" }
 })
 
 require("nvim-ts-autotag").setup({})
