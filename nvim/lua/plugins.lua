@@ -33,13 +33,16 @@ return require('packer').startup(function(use)
   }
   -- Styles
   use 'Mofiqul/dracula.nvim'
+  -- File Explorer
+  -- use {
+  --   'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  --   requires = { {'nvim-lua/plenary.nvim'} }
+  -- }
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { { "nvim-telescope/telescope.nvim", tag = "0.1.0" }, { "nvim-lua/plenary.nvim" } }
+  }
   -- use 'jose-elias-alvarez/null-ls.nvim'
   -- use 'MunifTanjim/prettier.nvim'
   -- use 'glepnir/lspsaga.nvim'
-  -- use {
-  --   'nvim-telescope/telescope.nvim',
-  --   tag = '0.1.1',
-  --   requires = { { 'nvim-lua/plenary.nvim' } }
-  -- }
-  -- use 'nvim-telescope/telescope-file-browser.nvim'
 end)

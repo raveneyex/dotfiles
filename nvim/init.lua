@@ -7,6 +7,7 @@ require('file-explorer') --file explorer
 require('syntax-highlight') -- syntax support 
 require('custom-keys') -- custom key mappings
 require('styling')
+require('file-finder')
 
 --
 -- require("null-ls-config")
