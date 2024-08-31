@@ -1,11 +1,19 @@
-repos() {
-  cd /Users/raveneyex/Workspace/repos
+hydra() {
+  cd ~/Workspace/he/h
+  nvm use
 }
 
-tools() {
-  cd /Users/raveneyex/Workspace/tools
+members() {
+  cd ~/Workspace/he/members
+  nvm use
 }
 
-configs() {
-  cd /Users/raveneyex/Workspace/configs
+core() {
+  cd ~/Workspace/he/frontend-core
+  nvm use
+}
+
+fss() {
+  cd ~/Workspace/he/fss
+  nvm use
 }
